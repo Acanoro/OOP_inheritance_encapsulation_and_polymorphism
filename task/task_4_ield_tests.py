@@ -56,8 +56,10 @@ class Student:
         all_values = []
 
         for values_list in self.grades.values():
-            for value in values_list:
-                all_values.append(value)
+            all_values.extend(values_list)
+
+        if not all_values:
+            return 0
 
         return sum(all_values) / len(all_values)
 
@@ -99,8 +101,10 @@ class Lecturer(Mentor):
         all_values = []
 
         for values_list in self.lecture_evaluations.values():
-            for value in values_list:
-                all_values.append(value)
+            all_values.extend(values_list)
+
+        if not all_values:
+            return 0
 
         return sum(all_values) / len(all_values)
 
